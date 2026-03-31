@@ -24,6 +24,7 @@ formulario.addEventListener("submit", (event) => {
   if (nome === "" || email === "" || telefone === "" || idade === "" || cpf === "") {
     mensagem.innerText = "Erro: todos os 5 campos devem ser preenchidos.";
     mensagem.style.color = "red";
+    limparMsg3Seg();
     return;
   }
 
