@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from './fragmentos/header/header';
+import { Footer } from './fragmentos/footer/footer';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header, Footer, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
