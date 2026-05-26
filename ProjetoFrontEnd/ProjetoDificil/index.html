@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Documento HTML padrão com idioma configurado para português brasileiro -->
+<html lang="pt-BR">
+<head>
+    <!-- Metadados importantes para renderização e comportamento responsivo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Calculadora Simples</title>
+
+    <!-- Link para o arquivo de estilos CSS local -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho principal da página -->
+    <h1>Bem-Vindo a nossa Calculadora</h1>
+
+    <!-- Contêiner principal da calculadora -->
+    <div class="calculadora">
+        <!-- Visor de saída onde os números e resultados aparecem; apenas leitura -->
+        <input type="text" id="tela" disabled>
+
+        <!-- Grades de botões formam a interface de entrada -->
+        <div class="botoes">
+            <!-- botões numéricos -->
+            <button onclick="adicionar('7')">7</button>
+            <button onclick="adicionar('8')">8</button>
+            <button onclick="adicionar('9')">9</button>
+            <!-- operadores recebem classe para estilo diferente -->
+            <button class="operador" onclick="adicionar('/')">/</button>
+
+            <button onclick="adicionar('4')">4</button>
+            <button onclick="adicionar('5')">5</button>
+            <button onclick="adicionar('6')">6</button>
+            <button class="operador" onclick="adicionar('*')">*</button>
+
+            <button onclick="adicionar('1')">1</button>
+            <button onclick="adicionar('2')">2</button>
+            <button onclick="adicionar('3')">3</button>
+            <button class="operador" onclick="adicionar('-')">-</button>
+
+            <button onclick="adicionar('0')">0</button>
+            <button onclick="adicionar('.')">.</button>
+            <!-- botão de cálculo dispara função calcular() -->
+            <button class="operador" onclick="calcular()">=</button>
+            <button class="operador" onclick="adicionar('+')">+</button>
+
+            <!-- botão limpar ocupa toda a largura da linha -->
+            <button class="limpar" onclick="limpar()">C</button>
+            <button class="apagar" onclick="apagar()">DEL</button>
+            <button onclick="adicionar('(')">(</button>
+            <button onclick="adicionar(')')">)</button>
+        </div>
+    </div>
+
+    <!-- Script que implementa a lógica da calculadora -->
+    <script src="script.js"></script>
+
+</body>
+</html>

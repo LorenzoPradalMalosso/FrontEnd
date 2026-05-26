@@ -1,0 +1,86 @@
+/* Estilos básicos do corpo: centraliza o conteúdo e aplica fundo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;            /* ocupa 100% da altura da janela */
+    margin: 0 auto;                /* remove margens padrão do navegador */
+    background-color: #e0e0e0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container da calculadora com fundo escuro e bordas arredondadas */
+.calculadora {
+    background-color: #222;
+    padding: 20px;            /* espaçamento interno */
+    border-radius: 10px;      /* cantos arredondados */
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5); /* sombra para elevação */
+    width: 260px;             /* largura fixa para consistência */
+}
+
+/* Estilo do visor de saída da calculadora */
+#tela {
+    width: 100%;              /* ocupa toda a largura do container */
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: left;        /* números alinhados à direita */
+    padding: 5px 10px;
+    box-sizing: border-box;   /* inclui padding na largura total */
+}
+
+/* Grades de botões para forma de calculadora tradicional */
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* quatro colunas iguais */
+    gap: 10px;                /* espaço entre botões */
+}
+
+/* Estilo genérico para todos os botões */
+button {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: background-color 0.2s; /* efeito suave ao clicar */
+    box-sizing: border-box;
+}
+
+/* Aparência quando o botão é pressionado */
+button:active {
+    background-color: #ccc;
+}
+.operador:active {
+    background-color: #e68a00;
+}
+.limpar:active {
+    background-color: #da190b;
+}
+.apagar:active {
+    background-color: #ccc;
+}
+
+/* Botão de operadores (como + - * /) tem cor diferente */
+.operador {
+    background-color: #ff9800;
+    color: white;
+}
+
+/* Botão limpar (C) se estende por quase toda a linha com cor vibrante */
+.limpar {
+    grid-column: span 1;      /* ocupa três colunas na grade */
+    background-color: #f44336;
+    color: white;
+}
+
+.apagar {
+    background-color: #969696;
+}

@@ -1,0 +1,42 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(205, 233, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#tempo{
+    text-shadow: 1px 1px 15px rgb(52, 146, 209);
+    font-size: 120px;
+    justify-self: center;
+}
+input{
+    border: 2px solid #555;
+    outline: none;
+    background-color: #f9f9f9;
+    height: 30px;
+    width: 400px;
+    border-radius: 10px;
+    display: block;
+    justify-self: center;
+}
+input::placeholder{
+    color: #888;
+    font-style: italic;
+}
+button{
+    background-color:rgb(69, 115, 199);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    height: 25px;
+    border-radius: 7px;
+    margin-top: 10px;
+    display: block;
+    justify-self: center;
+}
+button:hover{
+    background-color: rgb(0, 132, 255);
+}

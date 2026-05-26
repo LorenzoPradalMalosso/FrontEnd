@@ -1,0 +1,177 @@
+/* 
+RESET BÁSICO
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+ESTILO DA PÁGINA
+ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    opacity: 0.8;
+}
+
+/* 
+CONTAINER DO PIANO
+ */
+
+.piano {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+TECLAS GERAIS
+ */
+
+.tecla {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: all 0.1s ease;
+    user-select: none;
+}
+
+/* 
+TECLAS BRANCAS
+ */
+
+.branca {
+    width: 80px;
+    height: 280px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 0 0 8px 8px;
+    margin: 0 2px;
+    color: black;
+    font-weight: bold;
+}
+
+.branca span {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* 
+TECLAS PRETAS
+ */
+
+.preta {
+    position: absolute;
+    width: 50px;
+    height: 170px;
+    background: black;
+    border-radius: 0 0 6px 6px;
+    z-index: 2;
+}
+
+/* POSIÇÃO DAS TECLAS PRETAS */
+
+.preta[data-note="C#"] {
+    left: 55px;
+}
+
+.preta[data-note="D#"] {
+    left: 140px;
+}
+
+.preta[data-note="F#"] {
+    left: 305px;
+}
+
+.preta[data-note="G#"] {
+    left: 390px;
+}
+
+.preta[data-note="A#"] {
+    left: 475px;
+}
+
+/* 
+EFEITO AO PRESSIONAR TECLA
+*/
+
+.tecla.ativa {
+    transform: translateY(4px);
+    background-color: lightgray;
+}
+
+.branca.ativa {
+    background: #ddd;
+    
+}
+
+.preta.ativa {
+    background: #333;
+}
+.branca:hover{
+    background-color: lightslategray;
+}
+.preta:hover{
+    background-color: #ddd;
+}
+
+
+
+/* 
+RESPONSIVIDADE
+*/
+
+@media (max-width: 900px) {
+
+    .branca {
+        width: 60px;
+        height: 220px;
+    }
+
+    .preta {
+        width: 40px;
+        height: 140px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .branca {
+        width: 45px;
+        height: 180px;
+    }
+
+    .preta {
+        width: 30px;
+        height: 110px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+}
