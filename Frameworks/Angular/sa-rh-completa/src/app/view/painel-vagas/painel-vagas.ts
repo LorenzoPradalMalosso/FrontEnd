@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Vaga } from '../../model/vaga.model';
 import { Apiservice } from '../../service/apiservice';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-painel-vagas',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './painel-vagas.html',
   styleUrl: './painel-vagas.scss',
 })
-export class PainelVagas {
+export class PainelVagas implements OnInit {
   // Terminar de fazer o CRUD
   public vagas: Vaga[] = []; // Carregar as info da API
   // Objeto para Interpolação do Formulário
@@ -16,7 +17,9 @@ export class PainelVagas {
 
   constructor(private _apiService: Apiservice) {} // Estabelece conexão quando a página é carregada
 
-  rgOnInit(): void {}
+  ngOnInit(): void {
+    this.listarVagas();
+  }
 
   // Métodos READ (Listar todas as Vagas)
   listarVagas(): void {
