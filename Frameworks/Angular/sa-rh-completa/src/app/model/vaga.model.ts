@@ -44,7 +44,7 @@ export class Vaga {
       map.nome,
       map.foto,
       map.descricao,
-      map.saario
+      map.salario
     )
   }
 }

@@ -29,5 +29,113 @@
       "id": "pDR1GHGUJu8"
     }
   ],
+
+  "curriculos": [
+    {
+      "id": 1,
+      "usuarioId": 3,
+      "nomeCompleto": "Lorenzo Pradal Malosso",
+      "email": "lpmalosso@gmail.com",
+      "telefone": "(19) 99999-9999",
+      "cidade": "Santa Bárbara d'Oeste",
+      "estado": "SP",
+      "cargoDesejado": "Desenvolvedor Front-End",
+      "resumoProfissional": "Desenvolvedor com experiência em Angular e TypeScript.",
+      "formacoes": [
+        {
+          "curso": "Análise e Desenvolvimento de Sistemas",
+          "instituicao": "SENAI",
+          "nivel": "Tecnólogo",
+          "anoConclusao": 2026
+        }
+      ],
+      "experiencias": [
+        {
+          "empresa": "Tech Solutions",
+          "cargo": "Estagiário de Desenvolvimento",
+          "descricao": "Desenvolvimento de aplicações web.",
+          "dataInicio": "2025-01-10",
+          "dataFim": "2025-12-20"
+        }
+      ],
+      "habilidades": ["Angular", "TypeScript", "HTML", "CSS"],
+      "idiomas": ["Português", "Inglês"],
+      "linkedin": "https://www.linkedin.com/in/lorenzo-pradal-malosso-35b6b133a/",
+      "github": "https://github.com/LorenzoPradalMalosso"
+    },
+    {
+      "id": 2,
+      "usuarioId": 4,
+      "nomeCompleto": "Maria Oliveira",
+      "email": "maria.oliveira@email.com",
+      "telefone": "(11) 98888-7777",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "cargoDesejado": "Analista de Recursos Humanos",
+      "resumoProfissional": "Profissional de RH com experiência em recrutamento e seleção, integração de colaboradores e gestão de treinamentos.",
+      "formacoes": [
+        {
+          "curso": "Gestão de Recursos Humanos",
+          "instituicao": "Universidade Paulista",
+          "nivel": "Tecnólogo",
+          "anoConclusao": 2024
+        }
+      ],
+      "experiencias": [
+        {
+          "empresa": "RH Solutions",
+          "cargo": "Assistente de RH",
+          "descricao": "Apoio em processos seletivos, triagem de currículos e integração de novos colaboradores.",
+          "dataInicio": "2023-02-01",
+          "dataFim": "2025-01-15"
+        }
+      ],
+      "habilidades": [
+        "Recrutamento",
+        "Seleção",
+        "Pacote Office",
+        "Comunicação"
+      ],
+      "idiomas": [
+        "Português",
+        "Inglês"
+      ],
+      "linkedin": "https://linkedin.com/in/mariaoliveira",
+      "github": "https://github.com/mariaoliveira"
+    },
+    {
+      "id": 3,
+      "usuarioId": 5,
+      "nomeCompleto": "Carlos Henrique Santos",
+      "email": "carlos.santos@email.com",
+      "telefone": "(19) 97777-6666",
+      "cidade": "Campinas",
+      "estado": "SP",
+      "cargoDesejado": "Desenvolvedor Back-End",
+      "resumoProfissional": "Desenvolvedor focado em APIs REST, bancos de dados relacionais e desenvolvimento com Java e Spring Boot.",
+      "formacoes": [
+        {
+          "curso": "Ciência da Computação",
+          "instituicao": "PUC Campinas",
+          "nivel": "Bacharelado",
+          "anoConclusao": 2025
+        }
+      ],
+      "experiencias": [
+        {
+          "empresa": "CodeTech",
+          "cargo": "Desenvolvedor Júnior",
+          "descricao": "Desenvolvimento e manutenção de APIs REST utilizando Java, Spring Boot e MySQL.",
+          "dataInicio": "2024-01-10",
+          "dataFim": ""
+        }
+      ],
+      "habilidades": ["Java", "Spring Boot", "MySQL", "Git", "Docker"],
+      "idiomas": ["Português", "Espanhol"],
+      "linkedin": "https://linkedin.com/in/carloshsantos",
+      "github": "https://github.com/carloshsantos"
+    }
+  ],
+
   "$schema": "./node_modules/json-server/schema.json"
 }

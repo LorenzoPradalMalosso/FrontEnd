@@ -9,27 +9,27 @@ import { Vaga } from '../../model/vaga.model';
   styleUrl: './vagas.scss',
 })
 export class Vagas implements OnInit {
-  //atributos
-  //vetor para receber todas as vagas da api
+  // Atributos
+  // Vetor para receber todas as vagas da api
   public vagas: Vaga[] = [];
 
-  constructor(private _apiService: Apiservice) {} // ao abrir a página , estabele conexão com api
+  constructor(private _apiService: Apiservice) {} // Ao abrir a página, estabele conexão com api
 
-  // método para conectar com API
+  // Método para conectar com API
 
   listarVagas(): void {
-    //preencher o vetor comas informações da API
+    // Preencher o vetor comas informações da API
     this._apiService.getVagas().subscribe(
-      // subscribe => Ferramenta do Observable para fazer conexão Assincrona
-      //mapeamento de Dados
+      // Subscribe => Ferramenta do Observable para fazer conexão Assincrona
+      // Mapeamento de Dados
       (resposta) => {
-        //convertendo a Respostas da API em Obj para o Vetor
+        // Convertendo a Respostas da API em Obj para o Vetor
         this.vagas = resposta.map((e) => new Vaga(e.id, e.nome, e.foto, e.descricao, e.salario));
       },
     );
   }
 
-  // métod para carregamento ao inicar a tela
+  // Método para carregamento ao inicar a tela
   ngOnInit(): void {
     this.listarVagas();
   }
