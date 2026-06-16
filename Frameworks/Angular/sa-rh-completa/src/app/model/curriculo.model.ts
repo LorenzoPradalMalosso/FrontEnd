@@ -32,8 +32,7 @@ export class Curriculo {
   // Mapeamento de Dados da API (toMap e fromMap)
   // toMap: OBJ => API
   toMap(): { [key: string]: any } {
-    return {
-      id: this.id,
+    const data: { [key: string]: any } = {
       usuarioId: this.usuarioId,
       nomeCompleto: this.nomeCompleto,
       email: this.email,
@@ -49,6 +48,12 @@ export class Curriculo {
       linkedin: this.linkedin,
       github: this.github,
     };
+
+    if (this.id && this.id > 0) {
+      data['id'] = this.id;
+    }
+
+    return data;
   }
 
   // fromMap: API => OBJ

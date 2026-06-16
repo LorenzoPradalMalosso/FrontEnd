@@ -29,10 +29,8 @@
       "id": "pDR1GHGUJu8"
     }
   ],
-
   "curriculos": [
     {
-      "id": 1,
       "usuarioId": 3,
       "nomeCompleto": "Lorenzo Pradal Malosso",
       "email": "lpmalosso@gmail.com",
@@ -43,28 +41,34 @@
       "resumoProfissional": "Desenvolvedor com experiência em Angular e TypeScript.",
       "formacoes": [
         {
-          "curso": "Análise e Desenvolvimento de Sistemas",
-          "instituicao": "SENAI",
-          "nivel": "Tecnólogo",
-          "anoConclusao": 2026
+          "curso": null,
+          "instituicao": null,
+          "nivel": null,
+          "anoConclusao": null
         }
       ],
       "experiencias": [
         {
-          "empresa": "Tech Solutions",
-          "cargo": "Estagiário de Desenvolvimento",
-          "descricao": "Desenvolvimento de aplicações web.",
-          "dataInicio": "2025-01-10",
-          "dataFim": "2025-12-20"
+          "empresa": null,
+          "cargo": null,
+          "descricao": null,
+          "dataInicio": null,
+          "dataFim": null
         }
       ],
-      "habilidades": ["Angular", "TypeScript", "HTML", "CSS"],
-      "idiomas": ["Português", "Inglês"],
+      "habilidades": [
+        "HTML",
+        "CSS"
+      ],
+      "idiomas": [
+        "Inglês"
+      ],
       "linkedin": "https://www.linkedin.com/in/lorenzo-pradal-malosso-35b6b133a/",
-      "github": "https://github.com/LorenzoPradalMalosso"
+      "github": "https://github.com/LorenzoPradalMalosso",
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "usuarioId": 4,
       "nomeCompleto": "Maria Oliveira",
       "email": "maria.oliveira@email.com",
@@ -104,7 +108,7 @@
       "github": "https://github.com/mariaoliveira"
     },
     {
-      "id": 3,
+      "id": "3",
       "usuarioId": 5,
       "nomeCompleto": "Carlos Henrique Santos",
       "email": "carlos.santos@email.com",
@@ -130,12 +134,20 @@
           "dataFim": ""
         }
       ],
-      "habilidades": ["Java", "Spring Boot", "MySQL", "Git", "Docker"],
-      "idiomas": ["Português", "Espanhol"],
+      "habilidades": [
+        "Java",
+        "Spring Boot",
+        "MySQL",
+        "Git",
+        "Docker"
+      ],
+      "idiomas": [
+        "Português",
+        "Espanhol"
+      ],
       "linkedin": "https://linkedin.com/in/carloshsantos",
       "github": "https://github.com/carloshsantos"
     }
   ],
-
   "$schema": "./node_modules/json-server/schema.json"
 }

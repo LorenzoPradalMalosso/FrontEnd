@@ -1,1 +1,72 @@
-<p>curriculo-list works!</p>
+<section class="curriculo-list">
+  <h2>Lista de Currículos</h2>
+
+  <p *ngIf="mensagemErro">{{ mensagemErro }}</p>
+  <p *ngIf="!mensagemErro && curriculos.length === 0">Nenhum currículo cadastrado.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cargo desejado</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let curriculo of curriculos">
+        <td>{{ curriculo.id }}</td>
+        <td>{{ curriculo.nomeCompleto }}</td>
+        <td>{{ curriculo.cargoDesejado }}</td>
+        <td>{{ curriculo.email }}</td>
+        <td>
+          <button type="button" (click)="selecionarCurriculo(curriculo)">Ver</button>
+          <button type="button" (click)="excluirCurriculo(curriculo.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <section class="detalhes" *ngIf="selectedCurriculo" style="margin-bottom: 200px;">
+    <h3>Detalhes do currículo</h3>
+    <p><strong>Nome:</strong> {{ selectedCurriculo.nomeCompleto }}</p>
+    <p><strong>Email:</strong> {{ selectedCurriculo.email }}</p>
+    <p><strong>Telefone:</strong> {{ selectedCurriculo.telefone }}</p>
+    <p><strong>Cidade / Estado:</strong> {{ selectedCurriculo.cidade }} / {{ selectedCurriculo.estado }}</p>
+    <p><strong>Cargo desejado:</strong> {{ selectedCurriculo.cargoDesejado }}</p>
+    <p><strong>Resumo profissional:</strong> {{ selectedCurriculo.resumoProfissional }}</p>
+    <p><strong>LinkedIn:</strong> {{ selectedCurriculo.linkedin }}</p>
+    <p><strong>GitHub:</strong> {{ selectedCurriculo.github }}</p>
+
+    <div class="block">
+      <h4>Formações</h4>
+      <ul>
+        <li *ngFor="let formacao of selectedCurriculo.formacoes">
+          <strong>{{ formacao.curso }}</strong> — {{ formacao.instituicao }} / {{ formacao.nivel }} / {{ formacao.anoConclusao }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h4>Experiências</h4>
+      <ul>
+        <li *ngFor="let experiencia of selectedCurriculo.experiencias">
+          <strong>{{ experiencia.cargo }}</strong> em {{ experiencia.empresa }}<br />
+          {{ experiencia.descricao }}<br />
+          {{ experiencia.dataInicio }} — {{ experiencia.dataFim }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h4>Habilidades</h4>
+      <p>{{ selectedCurriculo.habilidades.join(', ') }}</p>
+    </div>
+
+    <div class="block">
+      <h4>Idiomas</h4>
+      <p>{{ selectedCurriculo.idiomas.join(', ') }}</p>
+    </div>
+  </section>
+</section>

@@ -1,1 +1,117 @@
-<p>curriculo-form works!</p>
+<section class="curriculo-form">
+  <h2>Cadastro de Currículo</h2>
+  <form style="margin-bottom: 200px;" #curriculoForm="ngForm" (ngSubmit)="cadastrarCurriculo(curriculoForm)">
+    <fieldset>
+      <legend>Dados pessoais</legend>
+
+      <label for="id">ID</label>
+      <input id="id" type="number" [(ngModel)]="curriculo.id" name="id" [readonly]="!updateMode" [required]="updateMode" />
+      <button type="button" *ngIf="updateMode" class="small-button" (click)="carregarCurriculo(curriculoForm)">Carregar currículo</button>
+
+      <label for="usuarioId">Usuário ID *</label>
+      <input id="usuarioId" type="number" [(ngModel)]="curriculo.usuarioId" name="usuarioId" required />
+
+      <label for="nomeCompleto">Nome completo *</label>
+      <input id="nomeCompleto" type="text" [(ngModel)]="curriculo.nomeCompleto" name="nomeCompleto" required />
+
+      <label for="email">Email *</label>
+      <input id="email" type="email" [(ngModel)]="curriculo.email" name="email" required />
+
+      <label for="telefone">Telefone *</label>
+      <input id="telefone" type="tel" [(ngModel)]="curriculo.telefone" name="telefone" required />
+
+      <label for="cidade">Cidade *</label>
+      <input id="cidade" type="text" [(ngModel)]="curriculo.cidade" name="cidade" required />
+
+      <label for="estado">Estado *</label>
+      <input id="estado" type="text" [(ngModel)]="curriculo.estado" name="estado" required />
+
+      <label for="cargoDesejado">Cargo desejado *</label>
+      <input id="cargoDesejado" type="text" [(ngModel)]="curriculo.cargoDesejado" name="cargoDesejado" required />
+
+      <label for="resumoProfissional">Resumo profissional</label>
+      <textarea id="resumoProfissional" rows="4" [(ngModel)]="curriculo.resumoProfissional" name="resumoProfissional"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Formações</legend>
+      <div class="group" *ngFor="let formacao of curriculo.formacoes; let i = index">
+        <label for="curso{{i}}">Curso</label>
+        <input id="curso{{i}}" type="text" [(ngModel)]="curriculo.formacoes[i].curso" name="curso{{i}}" />
+
+        <label for="instituicao{{i}}">Instituição</label>
+        <input id="instituicao{{i}}" type="text" [(ngModel)]="curriculo.formacoes[i].instituicao" name="instituicao{{i}}" />
+
+        <label for="nivel{{i}}">Nível</label>
+        <input id="nivel{{i}}" type="text" [(ngModel)]="curriculo.formacoes[i].nivel" name="nivel{{i}}" />
+
+        <label for="anoConclusao{{i}}">Ano de conclusão</label>
+        <input id="anoConclusao{{i}}" type="number" [(ngModel)]="curriculo.formacoes[i].anoConclusao" name="anoConclusao{{i}}" />
+
+        <button type="button" class="small-button" (click)="removerFormacao(i)">Remover formação</button>
+      </div>
+      <button type="button" (click)="adicionarFormacao()">+ Adicionar formação</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Experiências</legend>
+      <div class="group" *ngFor="let experiencia of curriculo.experiencias; let i = index">
+        <label for="empresa{{i}}">Empresa</label>
+        <input id="empresa{{i}}" type="text" [(ngModel)]="curriculo.experiencias[i].empresa" name="empresa{{i}}" />
+
+        <label for="cargo{{i}}">Cargo</label>
+        <input id="cargo{{i}}" type="text" [(ngModel)]="curriculo.experiencias[i].cargo" name="cargo{{i}}" />
+
+        <label for="descricao{{i}}">Descrição</label>
+        <textarea id="descricao{{i}}" rows="3" [(ngModel)]="curriculo.experiencias[i].descricao" name="descricao{{i}}"></textarea>
+
+        <label for="dataInicio{{i}}">Data início</label>
+        <input id="dataInicio{{i}}" type="text" [(ngModel)]="curriculo.experiencias[i].dataInicio" name="dataInicio{{i}}" />
+
+        <label for="dataFim{{i}}">Data fim</label>
+        <input id="dataFim{{i}}" type="text" [(ngModel)]="curriculo.experiencias[i].dataFim" name="dataFim{{i}}" />
+
+        <button type="button" class="small-button" (click)="removerExperiencia(i)">Remover experiência</button>
+      </div>
+      <button type="button" (click)="adicionarExperiencia()">+ Adicionar experiência</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Habilidades</legend>
+      <div class="group inline" *ngFor="let habilidade of curriculo.habilidades; let i = index; trackBy: trackByIndex">
+        <label for="habilidade{{i}}">Habilidade</label>
+        <input id="habilidade{{i}}" type="text" [(ngModel)]="curriculo.habilidades[i]" name="habilidade{{i}}" />
+        <button type="button" class="small-button" (click)="removerHabilidade(i)">Remover</button>
+      </div>
+      <button type="button" (click)="adicionarHabilidade()">+ Adicionar habilidade</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Idiomas</legend>
+      <div class="group inline" *ngFor="let idioma of curriculo.idiomas; let i = index; trackBy: trackByIndex">
+        <label for="idioma{{i}}">Idioma</label>
+        <input id="idioma{{i}}" type="text" [(ngModel)]="curriculo.idiomas[i]" name="idioma{{i}}" />
+        <button type="button" class="small-button" (click)="removerIdioma(i)">Remover</button>
+      </div>
+      <button type="button" (click)="adicionarIdioma()">+ Adicionar idioma</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Redes sociais</legend>
+      <label for="linkedin">LinkedIn *</label>
+      <input id="linkedin" type="text" [(ngModel)]="curriculo.linkedin" name="linkedin" required />
+
+      <label for="github">GitHub *</label>
+      <input id="github" type="text" [(ngModel)]="curriculo.github" name="github" required />
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" [disabled]="updateMode || !curriculoForm.form.valid">Cadastrar</button>
+      <button type="button" (click)="iniciarAtualizacao()">Atualizar</button>
+      <button type="button" *ngIf="updateMode" (click)="confirmarAtualizacao(curriculoForm)">Confirmar atualização</button>
+      <button type="button" (click)="limparFormulario()">Limpar</button>
+    </div>
+    <p class="update-message" *ngIf="updateMode">{{ updateMessage }}</p>
+  </form>
+</section>
+
